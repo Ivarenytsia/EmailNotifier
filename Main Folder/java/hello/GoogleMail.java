@@ -14,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 /**
  *
  * @author doraemon
+ *
  */
 public class GoogleMail {
     public GoogleMail() {
