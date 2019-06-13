@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+bootJar {
+    archiveBaseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile "joda-time:joda-time:2.2"
+    compile "com.googlecode.json-simple:json-simple:1.1"
+
+   // compile group: 'javax.mail', name: 'mail', version: '1.5.0-b01'
+
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+
+    compile ("org.springframework.boot:spring-boot-starter-mail")
+    testCompile group: 'org.subethamail', name: 'subethasmtp', version: '3.1.7'
+
+    //compile("org.springframework.boot:spring-boot-starter-test")
+    testCompile "junit:junit:4.12"
+}
